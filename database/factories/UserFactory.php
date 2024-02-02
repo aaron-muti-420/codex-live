@@ -2,11 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\Organisation\Role;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use Laravel\Jetstream\Features;
+use App\Models\Organisation\Section;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
@@ -20,6 +22,9 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $section = Section::inRandomOrder()->first();
+        $role = Role::inRandomOrder()->first();
+
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
@@ -30,6 +35,11 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'profile_photo_path' => null,
             'current_team_id' => null,
+            'position' => $this->faker->jobTitle(),
+            'section_id' => $section->id, // You can modify this to generate valid section IDs
+            'years_of_service' => $this->faker->numberBetween(1, 20),
+            'education' => $this->faker->sentence(2),
+            'role_id' => $role->id, // You can modify this to generate valid role IDs
         ];
     }
 
