@@ -2,14 +2,11 @@
     <x-application-logo class="block h-12 w-auto" />
 
     <h1 class="mt-8 text-2xl font-medium text-gray-900 dark:text-white">
-        Welcome to your Jetstream application!
+        Welcome to Codex
     </h1>
 
     <p class="mt-6 text-gray-500 dark:text-gray-400 leading-relaxed">
-        Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application. Laravel is designed
-        to help you build your application using a development environment that is simple, powerful, and enjoyable. We believe
-        you should love expressing your creativity through programming, so we have spent time carefully crafting the Laravel
-        ecosystem to be a breath of fresh air. We hope you love it.
+        Codex is your go-to solution for efficient organization management. Whether you're handling departments, visualizing hierarchies, or managing employees, we've got you covered.Experience the joy of managing your organization effortlessly with Codex. We've crafted a system that's powerful, user-friendly, and designed to make your work enjoyable.
     </p>
 </div>
 
@@ -25,11 +22,10 @@
         </div>
 
         <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-            Laravel has wonderful documentation covering every aspect of the framework. Whether you're new to the framework or have previous experience, we recommend reading all of the documentation from beginning to end.
-        </p>
 
+            Explore Codex through its detailed software requirements document to understand the powerful features and efficient organization it offers for effective employee management. Discover tips and best practices for seamless utilization as the documentation guides you through the requirements from start to finish. We invite you to review the document for a comprehensive understanding of Codex, and we're here to support your exploration.
         <p class="mt-4 text-sm">
-            <a href="https://laravel.com/docs" class="inline-flex items-center font-semibold text-indigo-700 dark:text-indigo-300">
+            <a href="https://sway.cloud.microsoft/zHVf55cNbHHGMDMU?ref=Link" class="inline-flex items-center font-semibold text-indigo-700 dark:text-indigo-300">
                 Explore the documentation
 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="ms-1 w-5 h-5 fill-indigo-500 dark:fill-indigo-200">
@@ -39,7 +35,7 @@
         </p>
     </div>
 
-    <div>
+    {{-- <div>
         <div class="flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-6 h-6 stroke-gray-400">
                 <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
@@ -92,5 +88,5 @@
         <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
             Authentication and registration views are included with Laravel Jetstream, as well as support for user email verification and resetting forgotten passwords. So, you're free to get started with what matters most: building your application.
         </p>
-    </div>
+    </div> --}}
 </div>

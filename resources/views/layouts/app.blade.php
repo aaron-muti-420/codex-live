@@ -17,7 +17,11 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased" >
+
+
+
+
         <x-banner />
 
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -31,6 +35,7 @@
                     </div>
                 </header>
             @endif
+
 
             <!-- Page Content -->
             <main>
