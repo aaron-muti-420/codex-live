@@ -6,6 +6,7 @@
         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
             <thead class="bg-gray-50 dark:bg-gray-900">
                 <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">Avatar</th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">First Name</th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">Last Name</th>
 
@@ -16,14 +17,17 @@
             </thead>
             <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                 @foreach ($users as $user)
-                <tr>
-                    <td class="px-6 py-4 whitespace-nowrap">{{ $user->first_name }}</td>
-                    <td class="px-6 py-4 whitespace-nowrap">{{ $user->last_name }}</td>
-
-                    <td class="px-6 py-4 whitespace-nowrap">{{ $user->email }}</td>
-
-                    <!-- Add more table cells as needed -->
-                </tr>
+                    <tr class="cursor-pointer" onclick="window.location.href = '{{ route('employees.show', $user->id) }}'">
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-blue-500 text-white">
+                                {{ substr($user->first_name, 0, 1) }}{{ substr($user->last_name, 0, 1) }}
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $user->first_name }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $user->last_name }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $user->email }}</td>
+                        <!-- Add more table cells as needed -->
+                    </tr>
                 @endforeach
             </tbody>
         </table>
