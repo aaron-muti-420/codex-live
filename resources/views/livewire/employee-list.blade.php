@@ -6,7 +6,9 @@
         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
             <thead class="bg-gray-50 dark:bg-gray-900">
                 <tr>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">Name</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">First Name</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">Last Name</th>
+
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">Email</th>
 
                     <!-- Add more table headers as needed -->
@@ -15,7 +17,9 @@
             <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                 @foreach ($users as $user)
                 <tr>
-                    <td class="px-6 py-4 whitespace-nowrap">{{ $user->name }}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">{{ $user->first_name }}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">{{ $user->last_name }}</td>
+
                     <td class="px-6 py-4 whitespace-nowrap">{{ $user->email }}</td>
 
                     <!-- Add more table cells as needed -->
