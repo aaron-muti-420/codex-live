@@ -23,11 +23,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $protected = [];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -58,4 +54,8 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function scopeSearch($query, $val){
+        $query->where('name', 'like', '%'.$val.'%')->orWhere('email', 'like', '%'.$val.'%');
+    }
 }
