@@ -9,6 +9,6 @@ class OrganisationController extends Controller
     //
     public function index()
     {
-        return view('organisation.index');
+        return view('departments.index');
     }
 }
