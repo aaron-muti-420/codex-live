@@ -31,10 +31,10 @@
 
                 Explore Codex through its detailed software requirements document to understand the powerful features and efficient organization it offers for effective employee management. Discover tips and best practices for seamless utilization as the documentation guides you through the requirements from start to finish. We invite you to review the document for a comprehensive understanding of Codex, and we're here to support your exploration.
             <p class="mt-4 text-sm">
-                <a href="https://sway.cloud.microsoft/zHVf55cNbHHGMDMU?ref=Link" class="inline-flex items-center font-semibold text-indigo-700 dark:text-indigo-300">
+                <a href="https://sway.cloud.microsoft/zHVf55cNbHHGMDMU?ref=Link" class="inline-flex items-center font-semibold text-red-700 dark:text-red-300">
                     Explore the documentation
 
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="ms-1 w-5 h-5 fill-indigo-500 dark:fill-indigo-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="ms-1 w-5 h-5 fill-red-500 dark:fill-red-200">
                         <path fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z" clip-rule="evenodd" />
                     </svg>
                 </a>
@@ -59,10 +59,10 @@
         </p>
 
         <p class="mt-4 text-sm">
-            <a href="https://laracasts.com" class="inline-flex items-center font-semibold text-indigo-700 dark:text-indigo-300">
+            <a href="https://laracasts.com" class="inline-flex items-center font-semibold text-red-700 dark:text-red-300">
                 Start watching Laracasts
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="ms-1 w-5 h-5 fill-indigo-500 dark:fill-indigo-200">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="ms-1 w-5 h-5 fill-red-500 dark:fill-red-200">
                     <path fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z" clip-rule="evenodd" />
                 </svg>
             </a>
