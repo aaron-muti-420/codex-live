@@ -24,4 +24,10 @@ class Department extends Model
     {
         return $this->hasMany(Section::class);
     }
+
+
+    public function scopeSearch($query, $val){
+        $query->where('department_name', 'like', '%'.$val.'%');
+
+    }
 }
