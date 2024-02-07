@@ -10,6 +10,11 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
+use App\Models\Organisation\Role;
+use App\Models\Organisation\Department;
+use App\Models\Organisation\Section;
+
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -59,5 +64,17 @@ class User extends Authenticatable
         $query->where('first_name', 'like', '%'.$val.'%')
         ->orWhere('last_name', 'like', '%'.$val.'%')
         ->orWhere('email', 'like', '%'.$val.'%');
+    }
+
+    public function role(){
+        return $this->belongsTo(Role::class);
+    }
+
+    public function department(){
+        return $this->belongsTo(Department::class);
+    }
+
+    public function section(){
+        return $this->belongsTo(Section::class);
     }
 }
