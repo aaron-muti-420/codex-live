@@ -2,6 +2,7 @@
 
 namespace Database\Factories\Organisation;
 
+use App\Models\Organisation\Role;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,9 +17,16 @@ class RoleFactory extends Factory
      */
     public function definition(): array
     {
+        $roles = ['Chief', 'Senior', 'Manager', 'Supervisor', 'Intern', 'Contract'];
+        $roleTitle = $this->faker->unique()->randomElement($roles);
+
+        // Ensure unique role title
+        while (Role::where('role_title', $roleTitle)->exists()) {
+            $roleTitle = $this->faker->unique()->randomElement($roles);
+        }
+
         return [
-            //
-            'role_title' => $this->faker->name(),
+            'role_title' => $roleTitle,
         ];
     }
 }
