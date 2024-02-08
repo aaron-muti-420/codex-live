@@ -98,14 +98,20 @@
                  </div>
              </div>
              <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 dark:bg-gray-800">
-                 <h3 class="text-xl leading-none font-bold text-gray-900 dark:text-white mb-10">Operational Overview</h3>
+
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Operational Overview</h3>
+                        <a href="{{route('roles.index')}}" class="text-sm font-medium text-red-600 hover:bg-gray-200 rounded-lg inline-flex items-center p-2">
+                        View all
+                        </a>
+                    </div>
                  <div class="block w-full overflow-x-auto">
-                     <table class="items-center w-full bg-transparent rounded-lg border-collapse">
+                     <table class="items-center w-full bg-transparent border-spacing-2">
                          <thead>
-                             <tr class="rounded-full bg-gray-200 text-gray-700 rounded-lg dark:bg-gray-900 dark:text-white">
-                                 <th class="px-4 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">Roles</th>
-                                 <th class="px-4 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">Employees</th>
-                                 <th class="px-4 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap min-w-140-px"></th>
+                             <tr class="p-6 text-gray-700 rounded-lg dark:bg-gray-900 dark:text-white  text-l font-semibold text-left ">
+                                 <th class="">Roles</th>
+                                 <th class="">Employees</th>
+                                 <th class="min-w-140-px"></th>
                              </tr>
                          </thead>
                          <tbody class="divide-y divide-gray-100">

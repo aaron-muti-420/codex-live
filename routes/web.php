@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\AddRoleModal;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,4 +30,7 @@ Route::middleware([
     Route::resource('sections', \App\Http\Controllers\SectionController::class);
     Route::resource('departments', \App\Http\Controllers\DepartmentController::class);
     Route::resource('roles', \App\Http\Controllers\RoleController::class);
+
+    //livewire routes
+    Route::get('/add-role-modal', AddRoleModal::class);
 });
