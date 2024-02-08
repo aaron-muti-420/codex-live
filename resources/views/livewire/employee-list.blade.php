@@ -19,7 +19,7 @@
                 @foreach ($users as $user)
                     <tr class="cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-900" onclick="window.location.href = '{{ route('employees.show', $user->id) }}'">
                         <td class="px-6 py-4 whitespace-nowrap">
-                                {{ $user->id }}
+                                {{ $user->salary_reference_number }}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $user->first_name }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $user->last_name }}</td>

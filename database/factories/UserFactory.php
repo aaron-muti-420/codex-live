@@ -26,8 +26,10 @@ class UserFactory extends Factory
         $role = Role::inRandomOrder()->first();
 
         return [
+            'salary_reference_number' => $this->faker->unique()->numberBetween(100000, 999999),
             'first_name' => $this->faker->firstName(),
             'last_name' => $this->faker->lastName(),
+            'date_of_birth' => $this->faker->date(),
             'gender' => $this->faker->randomElement(['m','f']),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),

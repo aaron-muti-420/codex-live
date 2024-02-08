@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->foreignId('supervisor_id')->nullable();
+            $table->string('salary_reference_number')->unique()->nullable();
             $table->string('first_name');
             $table->string('last_name');
+            $table->date('date_of_birth')->nullable();
             $table->string('gender')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
