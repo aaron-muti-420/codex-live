@@ -2,7 +2,7 @@
     <div class="pt-3 px-4">
        <div class="mt-4 w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         <a href="{{route('employees.index')}}" class="">
-          <div class="bg-white hover:bg-gray-100 shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
+          <div class="bg-white hover:bg-gray-200 shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
              <div class="flex items-center">
                 <div class="flex-shrink-0">
                    <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900">{{$employees}}</span>
@@ -18,7 +18,7 @@
           </div>
         </a>
         <a href="{{route('organisations.index')}}" class="">
-          <div class="bg-white hover:bg-gray-100 shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
+          <div class="bg-white hover:bg-gray-200 shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
              <div class="flex items-center">
                 <div class="flex-shrink-0">
                    <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900">{{$departments}}</span>
@@ -35,7 +35,7 @@
         </a>
           <a href="{{route('sections.index')}}" class="">
 
-          <div class="bg-white hover:bg-gray-100 shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
+          <div class="bg-white hover:bg-gray-200 shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
 
              <div class="flex items-center">
                 <div class="flex-shrink-0">
@@ -58,18 +58,19 @@
           <div class="bg-white shadow rounded-lg mb-4 p-4 sm:p-6 h-full">
              <div class="flex items-center justify-between mb-4">
                 <h3 class="text-xl font-bold leading-none text-gray-900">Latest Employees</h3>
-                <a href="{{route('employees.index')}}" class="text-sm font-medium text-red-600 hover:bg-gray-100 rounded-lg inline-flex items-center p-2">
+                <a href="{{route('employees.index')}}" class="text-sm font-medium text-red-600 hover:bg-gray-200 rounded-lg inline-flex items-center p-2">
                 View all
                 </a>
              </div>
              <div class="flow-root">
                 <ul role="list" class="divide-y divide-gray-200">
                     @foreach ($latestUsers as $luser)
-                    <li class="py-3 sm:py-4">
+                    <a href="{{route('employees.show', $luser->id)}}">
+                    <li class="p-3 rounded-lg sm:py-4 hover:bg-gray-200 ">
                         <div class="flex items-center space-x-4">
                            <div class="flex-shrink-0">
                             @if ($luser->profile_photo_path)
-                                <img class="h-8 w-8 rounded-full" src="{{asset($luser->profile_photo_path)}}" alt="User Avatar">
+                                <img class="h-8 w-8 rounded-full" src="profile-photos/{{asset($luser->profile_photo_path)}}" alt="User Avatar">
                             @else
                                 <div class="h-8 w-8 rounded-full bg-red-300 flex items-center justify-center">
                                     <span class="text-gray-600 text-sm font-semibold">{{ substr($luser->first_name, 0, 1) }}{{ substr($luser->last_name, 0, 1) }}</span>
@@ -89,6 +90,7 @@
                            </div>
                         </div>
                      </li>
+                    </a>
                     @endforeach
 
 
