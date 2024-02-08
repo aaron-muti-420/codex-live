@@ -1,7 +1,8 @@
 <main>
     <div class="pt-3 px-4">
        <div class="mt-4 w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-          <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
+        <a href="{{route('employees.index')}}" class="">
+          <div class="bg-white hover:bg-gray-100 shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
              <div class="flex items-center">
                 <div class="flex-shrink-0">
                    <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900">{{$employees}}</span>
@@ -15,7 +16,9 @@
                 </div>
              </div>
           </div>
-          <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
+        </a>
+        <a href="{{route('organisations.index')}}" class="">
+          <div class="bg-white hover:bg-gray-100 shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
              <div class="flex items-center">
                 <div class="flex-shrink-0">
                    <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900">{{$departments}}</span>
@@ -29,7 +32,11 @@
                 </div>
              </div>
           </div>
-          <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
+        </a>
+          <a href="{{route('sections.index')}}" class="">
+
+          <div class="bg-white hover:bg-gray-100 shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
+
              <div class="flex items-center">
                 <div class="flex-shrink-0">
                    <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900">{{$sections}}</span>
@@ -42,7 +49,10 @@
                    </svg>
                 </div>
              </div>
+
           </div>
+        </a>
+
        </div>
        <div class="grid grid-cols-1 2xl:grid-cols-2 xl:gap-4 my-4">
           <div class="bg-white shadow rounded-lg mb-4 p-4 sm:p-6 h-full">
