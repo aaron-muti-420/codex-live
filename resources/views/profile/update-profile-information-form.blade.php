@@ -64,6 +64,9 @@
             <x-input-error for="last_name" class="mt-2" />
         </div>
 
+
+
+
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="email" value="{{ __('Email') }}" />
