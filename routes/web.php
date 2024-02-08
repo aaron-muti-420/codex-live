@@ -28,4 +28,5 @@ Route::middleware([
     Route::resource('employees', \App\Http\Controllers\EmployeeController::class);
     Route::resource('sections', \App\Http\Controllers\SectionController::class);
     Route::resource('departments', \App\Http\Controllers\DepartmentController::class);
+    Route::resource('roles', \App\Http\Controllers\RoleController::class);
 });

@@ -5,7 +5,7 @@
                 <div class="flex-shrink-0">
                     <h3 class="text-base font-normal">Company</h3>
 
-                   <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900 dark:text-red-500">{{$org->organisation_name}}</span>
+                   <span class="text-2xl sm:text-3xl leading-none font-bold text-red-500 dark:text-red-500">{{$org->organisation_name}}</span>
                 </div>
 
              </div>
