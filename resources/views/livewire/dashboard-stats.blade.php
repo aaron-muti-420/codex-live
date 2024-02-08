@@ -17,7 +17,7 @@
              </div>
           </div>
         </a>
-        <a href="{{route('organisations.index')}}" class="">
+        <a href="{{route('departments.index')}}" class="">
           <div class="bg-white hover:bg-gray-200 shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
              <div class="flex items-center">
                 <div class="flex-shrink-0">

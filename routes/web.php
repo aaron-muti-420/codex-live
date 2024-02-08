@@ -25,7 +25,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::resource('organisations', \App\Http\Controllers\OrganisationController::class);
     Route::resource('employees', \App\Http\Controllers\EmployeeController::class);
     Route::resource('sections', \App\Http\Controllers\SectionController::class);
+    Route::resource('departments', \App\Http\Controllers\DepartmentController::class);
 });

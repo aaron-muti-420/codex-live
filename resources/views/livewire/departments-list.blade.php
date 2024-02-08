@@ -17,10 +17,8 @@
             </thead>
             <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                 @foreach ($departments as $department)
-                    <tr class="cursor-pointer">
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            {{$department->id}}
-                        </td>
+                    <tr class="cursor-pointer hover:bg-gray-200" onclick="window.location.href = '{{ route('departments.show', $department->id) }}'">
+                        <td class="px-6 py-4 whitespace-nowrap">{{$department->id}}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $department->department_name }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $department->department_location }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $department->sections->count() }}</td>

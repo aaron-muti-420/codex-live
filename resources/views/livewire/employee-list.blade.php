@@ -17,7 +17,7 @@
             </thead>
             <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                 @foreach ($users as $user)
-                    <tr class="cursor-pointer" onclick="window.location.href = '{{ route('employees.show', $user->id) }}'">
+                    <tr class="cursor-pointer hover:bg-gray-200" onclick="window.location.href = '{{ route('employees.show', $user->id) }}'">
                         <td class="px-6 py-4 whitespace-nowrap">
                                 {{ $user->id }}
                         </td>
