@@ -32,5 +32,4 @@ Route::middleware([
     Route::resource('roles', \App\Http\Controllers\RoleController::class);
 
     //livewire routes
-    Route::get('/add-role-modal', AddRoleModal::class);
 });
