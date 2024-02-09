@@ -1,8 +1,8 @@
-- # User API
+- # Role API
 ## Endpoints
-### 1. GET /users
+### 1. GET /roles
 
-Returns a list of all users.
+Returns a list of all roles.
 #### Request
 
 No request body required.
@@ -12,9 +12,7 @@ No request body required.
 [
   {
     "id": 1,
-    "first_name": "John",
-    "last_name": "Doe",
-    "email": "john.doe@example.com",
+    "role_title": "Chief",
     ...
   },
   ...
@@ -22,9 +20,9 @@ No request body required.
 ```
 
 
-### 2. GET /users/{id}
+### 2. GET /roles/{id}
 
-Returns a single user by ID.
+Returns a single role by ID.
 #### Request
 
 No request body required.
@@ -33,24 +31,20 @@ No request body required.
 ```json
 {
   "id": 1,
-  "first_name": "John",
-  "last_name": "Doe",
-  "email": "john.doe@example.com",
+  "role_title": "Chief",
   ...
 }
 ```
 
 
-### 3. POST /users
+### 3. POST /roles
 
-Creates a new user.
+Creates a new role.
 #### Request
 
 ```json
 {
-  "first_name": "Jane",
-  "last_name": "Doe",
-  "email": "jane.doe@example.com",
+  "role_title": "Senior",
   ...
 }
 ```
@@ -61,23 +55,20 @@ Creates a new user.
 ```json
 {
   "id": 2,
-  "first_name": "Jane",
-  "last_name": "Doe",
-  "email": "jane.doe@example.com",
+  "role_title": "Senior",
   ...
 }
 ```
 
 
-### 4. PUT /users/{id}
+### 4. PUT /roles/{id}
 
-Updates a user by ID.
+Updates a role by ID.
 #### Request
 
 ```json
 {
-  "first_name": "Updated John",
-  "last_name": "Updated Doe",
+  "role_title": "Updated Senior",
   ...
 }
 ```
@@ -87,17 +78,16 @@ Updates a user by ID.
 
 ```json
 {
-  "id": 1,
-  "first_name": "Updated John",
-  "last_name": "Updated Doe",
+  "id": 2,
+  "role_title": "Updated Senior",
   ...
 }
 ```
 
 
-### 5. DELETE /users/{id}
+### 5. DELETE /roles/{id}
 
-Deletes a user by ID.
+Deletes a role by ID.
 #### Request
 
 No request body required.
@@ -105,47 +95,13 @@ No request body required.
 
 ```json
 {
-  "message": "User deleted successfully."
+  "message": "Role deleted successfully."
 }
 ```
 
-## User Object
+## Role Object
 
-The User object has the following properties:
-
-- id: The user's unique identifier.
-- first_name: The user's first name.
-- last_name: The user's last name.
-- date_of_birth: The user's date of birth.
-- gender: The user's gender.
-- national_id: The user's national ID.
-- phone_number: The user's phone number.
-- address: The user's address.
-- city: The user's city.
-- marital_status: The user's marital status.
-- profile_photo_path: The path to the user's profile photo.
-- email: The user's email.
-- email_verified_at: The timestamp when the user's email was verified.
-- password: The user's password.
-- supervisor_id: The ID of the user's supervisor.
-- salary_reference_number: The user's salary reference number.
-- section_id: The ID of the user's section.
-- years_of_service: The number of years the user has been in service.
-- current_team_id: The ID of the user's current team.
-- role_id: The ID of the user's role.
-- position: The user's position.
-- tax_identification_number: The user's tax identification number.
-- social_security_number: The user's social security number.
-- bank_account_number: The user's bank account number.
-- bank_name: The name of the user's bank.
-- bank_branch: The branch of the user's bank.
-- salary_scale: The user's salary scale.
-- basic_salary: The user's basic salary.
-- housing_allowance: The user's housing allowance.
-- transport_allowance: The user's transport allowance.
-- other_allowance: The user's other allowance.
-- total_salary: The user's total salary.
-- education: The user's education.
-- created_at: The timestamp when the user was created.
-- updated_at: The timestamp when the user was last updated.
-- date_of_employment: The user's date of employment.
+- `id`: The role's unique identifier.
+- `role_title`: The title of the role.
+- `created_at`: The timestamp when the role was created.
+- `updated_at`: The timestamp when the role was last updated.

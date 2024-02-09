@@ -10,126 +10,23 @@ API authentication is required for certain endpoints. Include the `Authorization
 
 ## Endpoints
 
-### 1. User Authentication
-
-#### 1.1 Login
-
-- **Endpoint:** `/auth/login`
-- **Method:** `POST`
-- **Description:** Log in a user and receive an authentication token.
-
-##### Request
-
-```json
-{
-  "email": "user@example.com",
-  "password": "password123"
-}
-```
-##### Response
-
-```json
-{
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ..."
-}
-```
-
-#### 1.2 Logout
-- **Endpoint:** `/auth/logout`
-- **Method:** `POST`
-- **Description:** Log out the currently authenticated user.
-
-##### Request
-
-- No request body required.
-
-##### Response
-```json
-Copy code
-{
-  "message": "Logged out successfully."
-}
-```
-# Organization API Documentation
-
-## Base URL
-
-All organization-related endpoints are relative to the base URL: `{base_url}`.
-
-## Authentication
-
-API authentication is required for certain endpoints. Include the `Authorization` header with a valid token.
-
+- # User API
 ## Endpoints
+### 1. GET /users
 
-### 1. Get Organization Details
-
-#### 1.1 Endpoint
-
-- **Endpoint:** `/organization`
-- **Method:** `GET`
-- **Description:** Retrieve details of the organization.
-
-##### Request
+Returns a list of all users.
+#### Request
 
 No request body required.
-
-##### Response
-
-```json
-{
-  "organization_name": "My Organization",
-  "address": "123 Main St, Cityville",
-  "contact_email": "info@myorganization.com",
-  ...
-}
-```
-
-
-### 2. Update Organization Details
-#### 2.1 Endpoint 
-- **Endpoint:**  `/organization` 
-- **Method:**  `PUT` 
-- **Description:**  Update details of the organization.
-##### Request
-
-```json
-{
-  "organization_name": "New Organization Name",
-  "address": "456 Updated St, Townsville",
-  "contact_email": "contact@neworganization.com",
-  ...
-}
-```
-
-
-##### Response
-
-```json
-{
-  "organization_name": "New Organization Name",
-  "address": "456 Updated St, Townsville",
-  "contact_email": "contact@neworganization.com",
-  ...
-}
-```
-
-
-### 3. Get Departments
-#### 3.1 Endpoint 
-- **Endpoint:**  `/organization/departments` 
-- **Method:**  `GET` 
-- **Description:**  Retrieve a list of all departments in the organization.
-##### Request
-
-No request body required.
-##### Response
+#### Response
 
 ```json
 [
   {
     "id": 1,
-    "department_name": "HR",
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@example.com",
     ...
   },
   ...
@@ -137,62 +34,279 @@ No request body required.
 ```
 
 
-### 4. Get Sections
-#### 4.1 Endpoint 
-- **Endpoint:**  `/organization/sections` 
-- **Method:**  `GET` 
-- **Description:**  Retrieve a list of all sections in the organization.
-##### Request
+### 2. GET /users/{id}
+
+Returns a single user by ID.
+#### Request
 
 No request body required.
-##### Response
-
-```json
-[
-  {
-    "id": 1,
-    "section_name": "Engineering",
-    ...
-  },
-  ...
-]
-```
-
-### 2. Create Department
-#### 2.1 Endpoint 
-- **Endpoint:**  `/departments` 
-- **Method:**  `POST` 
-- **Description:**  Create a new department.
-##### Request
+#### Response
 
 ```json
 {
-  "name": "Finance Department",
+  "id": 1,
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "john.doe@example.com",
   ...
 }
 ```
 
 
-##### Response
+### 3. POST /users
+
+Creates a new user.
+#### Request
+
+```json
+{
+  "first_name": "Jane",
+  "last_name": "Doe",
+  "email": "jane.doe@example.com",
+  ...
+}
+```
+
+
+#### Response
 
 ```json
 {
   "id": 2,
-  "name": "Finance Department",
+  "first_name": "Jane",
+  "last_name": "Doe",
+  "email": "jane.doe@example.com",
   ...
 }
 ```
 
 
-### 3. Get Department by ID
-#### 3.1 Endpoint 
-- **Endpoint:**  `/departments/{id}` 
-- **Method:**  `GET` 
-- **Description:**  Retrieve details of a specific department.
-##### Request
+### 4. PUT /users/{id}
+
+Updates a user by ID.
+#### Request
+
+```json
+{
+  "first_name": "Updated John",
+  "last_name": "Updated Doe",
+  ...
+}
+```
+
+
+#### Response
+
+```json
+{
+  "id": 1,
+  "first_name": "Updated John",
+  "last_name": "Updated Doe",
+  ...
+}
+```
+
+
+### 5. DELETE /users/{id}
+
+Deletes a user by ID.
+#### Request
 
 No request body required.
-##### Response
+#### Response
+
+```json
+{
+  "message": "User deleted successfully."
+}
+```
+
+## User Object
+
+The User object has the following properties:
+
+- id: The user's unique identifier.
+- first_name: The user's first name.
+- last_name: The user's last name.
+- date_of_birth: The user's date of birth.
+- gender: The user's gender.
+- national_id: The user's national ID.
+- phone_number: The user's phone number.
+- address: The user's address.
+- city: The user's city.
+- marital_status: The user's marital status.
+- profile_photo_path: The path to the user's profile photo.
+- email: The user's email.
+- email_verified_at: The timestamp when the user's email was verified.
+- password: The user's password.
+- supervisor_id: The ID of the user's supervisor.
+- salary_reference_number: The user's salary reference number.
+- section_id: The ID of the user's section.
+- years_of_service: The number of years the user has been in service.
+- current_team_id: The ID of the user's current team.
+- role_id: The ID of the user's role.
+- position: The user's position.
+- tax_identification_number: The user's tax identification number.
+- social_security_number: The user's social security number.
+- bank_account_number: The user's bank account number.
+- bank_name: The name of the user's bank.
+- bank_branch: The branch of the user's bank.
+- salary_scale: The user's salary scale.
+- basic_salary: The user's basic salary.
+- housing_allowance: The user's housing allowance.
+- transport_allowance: The user's transport allowance.
+- other_allowance: The user's other allowance.
+- total_salary: The user's total salary.
+- education: The user's education.
+- created_at: The timestamp when the user was created.
+- updated_at: The timestamp when the user was last updated.
+- date_of_employment: The user's date of employment.
+
+- # Organisation API
+## Endpoints
+### 1. GET /organisations
+
+Returns a list of all organisations.
+#### Request
+
+No request body required.
+#### Response
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Example Corp",
+    "location": "Cityville",
+    ...
+  },
+  ...
+]
+```
+
+
+### 2. GET /organisations/{id}
+
+Returns a single organisation by ID.
+#### Request
+
+No request body required.
+#### Response
+
+```json
+{
+  "id": 1,
+  "name": "Example Corp",
+  "location": "Cityville",
+  ...
+}
+```
+
+
+### 3. POST /organisations
+
+Creates a new organisation.
+#### Request
+
+```json
+{
+  "name": "New Corp",
+  "location": "Townsville",
+  ...
+}
+```
+
+
+#### Response
+
+```json
+{
+  "id": 2,
+  "name": "New Corp",
+  "location": "Townsville",
+  ...
+}
+```
+
+
+### 4. PUT /organisations/{id}
+
+Updates an organisation by ID.
+#### Request
+
+```json
+{
+  "name": "Updated Corp",
+  "location": "Updated City",
+  ...
+}
+```
+
+
+#### Response
+
+```json
+{
+  "id": 1,
+  "name": "Updated Corp",
+  "location": "Updated City",
+  ...
+}
+```
+
+
+### 5. DELETE /organisations/{id}
+
+Deletes an organisation by ID.
+#### Request
+
+No request body required.
+#### Response
+
+```json
+{
+  "message": "Organisation deleted successfully."
+}
+```
+## Organisation Object
+
+- id: The organisation's unique identifier.
+- organisation_name: The name of the organisation.
+- organisation_logo: The logo of the organisation.
+- organisation_mission: The mission statement of the organisation.
+- organisation_vision: The vision statement of the organisation.
+- created_at: The timestamp when the organisation was created.
+- updated_at: The timestamp when the organisation was last updated.
+
+- # Department API
+## Endpoints
+### 1. GET /departments
+
+Returns a list of all departments.
+#### Request
+
+No request body required.
+#### Response
+
+```json
+[
+  {
+    "id": 1,
+    "name": "HR Department",
+    ...
+  },
+  ...
+]
+```
+
+
+### 2. GET /departments/{id}
+
+Returns a single department by ID.
+#### Request
+
+No request body required.
+#### Response
 
 ```json
 {
@@ -203,78 +317,91 @@ No request body required.
 ```
 
 
-### 4. Update Department
-#### 4.1 Endpoint 
-- **Endpoint:**  `/departments/{id}` 
-- **Method:**  `PUT` 
-- **Description:**  Update details of a specific department.
-##### Request
+### 3. POST /departments
+
+Creates a new department.
+#### Request
 
 ```json
 {
-  "name": "New HR Department Name",
+  "name": "Finance Department",
   ...
 }
 ```
 
 
-##### Response
+#### Response
 
 ```json
 {
-  "id": 1,
-  "name": "New HR Department Name",
+  "id": 2,
+  "name": "Finance Department",
   ...
 }
 ```
 
 
-### 5. Delete Department
-#### 5.1 Endpoint 
-- **Endpoint:**  `/departments/{id}` 
-- **Method:**  `DELETE` 
-- **Description:**  Delete a specific department.
-##### Request
+### 4. PUT /departments/{id}
+
+Updates a department by ID.
+#### Request
+
+```json
+{
+  "name": "Updated Finance Department",
+  ...
+}
+```
+
+
+#### Response
+
+```json
+{
+  "id": 2,
+  "name": "Updated Finance Department",
+  ...
+}
+```
+
+
+### 5. DELETE /departments/{id}
+
+Deletes a department by ID.
+#### Request
 
 No request body required.
-##### Response
+#### Response
 
 ```json
 {
   "message": "Department deleted successfully."
 }
 ```
-# Section API Documentation
+## Department Object
 
-## Base URL
+- `id`: The department's unique identifier.
+- `department_name`: The name of the department.
+- `department_location`: The location of the department.
+- `organisation_id`: The ID of the organisation the department belongs to.
+- `created_at`: The timestamp when the department was created.
+- `updated_at`: The timestamp when the department was last updated.
 
-All section-related endpoints are relative to the base URL: `{base_url}`.
-
-## Authentication
-
-API authentication is required for certain endpoints. Include the `Authorization` header with a valid token.
-
+- # Section API
 ## Endpoints
+### 1. GET /sections
 
-### 1. Get All Sections
-
-#### 1.1 Endpoint
-
-- **Endpoint:** `/sections`
-- **Method:** `GET`
-- **Description:** Retrieve a list of all sections.
-
-##### Request
+Returns a list of all sections.
+#### Request
 
 No request body required.
-
-##### Response
+#### Response
 
 ```json
 [
   {
     "id": 1,
-    "section_name": "Development",
+    "section_name": "IT Section",
     ...
   },
   ...
@@ -282,87 +409,78 @@ No request body required.
 ```
 
 
-### 2. Create Section
-#### 2.1 Endpoint 
-- **Endpoint:**  `/sections` 
-- **Method:**  `POST` 
-- **Description:**  Create a new section.
-##### Request
+### 2. GET /sections/{id}
+
+Returns a single section by ID.
+#### Request
+
+No request body required.
+#### Response
 
 ```json
 {
-  "section_name": "Quality Assurance",
-  "department_id": 1,
+  "id": 1,
+  "section_name": "IT Section",
   ...
 }
 ```
 
 
-##### Response
+### 3. POST /sections
+
+Creates a new section.
+#### Request
+
+```json
+{
+  "section_name": "Finance Section",
+  ...
+}
+```
+
+
+#### Response
 
 ```json
 {
   "id": 2,
-  "section_name": "Quality Assurance",
+  "section_name": "Finance Section",
   ...
 }
 ```
 
 
-### 3. Get Section by ID
-#### 3.1 Endpoint 
-- **Endpoint:**  `/sections/{id}` 
-- **Method:**  `GET` 
-- **Description:**  Retrieve details of a specific section.
-##### Request
+### 4. PUT /sections/{id}
+
+Updates a section by ID.
+#### Request
+
+```json
+{
+  "section_name": "Updated Finance Section",
+  ...
+}
+```
+
+
+#### Response
+
+```json
+{
+  "id": 2,
+  "section_name": "Updated Finance Section",
+  ...
+}
+```
+
+
+### 5. DELETE /sections/{id}
+
+Deletes a section by ID.
+#### Request
 
 No request body required.
-##### Response
-
-```json
-{
-  "id": 1,
-  "section_name": "Development",
-  ...
-}
-```
-
-
-### 4. Update Section
-#### 4.1 Endpoint 
-- **Endpoint:**  `/sections/{id}` 
-- **Method:**  `PUT` 
-- **Description:**  Update details of a specific section.
-##### Request
-
-```json
-{
-  "section_name": "New Development Section Name",
-  ...
-}
-```
-
-
-##### Response
-
-```json
-{
-  "id": 1,
-  "section_name": "New Development Section Name",
-  ...
-}
-```
-
-
-### 5. Delete Section
-#### 5.1 Endpoint 
-- **Endpoint:**  `/sections/{id}` 
-- **Method:**  `DELETE` 
-- **Description:**  Delete a specific section.
-##### Request
-
-No request body required.
-##### Response
+#### Response
 
 ```json
 {
@@ -370,31 +488,23 @@ No request body required.
 }
 ```
 
-# Role API Documentation
+## Section Object
 
-## Base URL
+- id: The section's unique identifier.
+- section_name: The name of the section.
+- department_id: The ID of the department the section belongs to.
+- created_at: The timestamp when the section was created.
+- updated_at: The timestamp when the section was last updated.
 
-All role-related endpoints are relative to the base URL: `{base_url}`.
-
-## Authentication
-
-API authentication is required for certain endpoints. Include the `Authorization` header with a valid token.
-
+- # Role API
 ## Endpoints
+### 1. GET /roles
 
-### 1. Get All Roles
-
-#### 1.1 Endpoint
-
-- **Endpoint:** `/roles`
-- **Method:** `GET`
-- **Description:** Retrieve a list of all roles.
-
-##### Request
+Returns a list of all roles.
+#### Request
 
 No request body required.
-
-##### Response
+#### Response
 
 ```json
 [
@@ -408,41 +518,13 @@ No request body required.
 ```
 
 
-### 2. Create Role
-#### 2.1 Endpoint 
-- **Endpoint:**  `/roles` 
-- **Method:**  `POST` 
-- **Description:**  Create a new role.
-##### Request
+### 2. GET /roles/{id}
 
-```json
-{
-  "role_title": "Junior Developer",
-  ...
-}
-```
-
-
-##### Response
-
-```json
-{
-  "id": 2,
-  "role_title": "Junior Developer",
-  ...
-}
-```
-
-
-### 3. Get Role by ID
-#### 3.1 Endpoint 
-- **Endpoint:**  `/roles/{id}` 
-- **Method:**  `GET` 
-- **Description:**  Retrieve details of a specific role.
-##### Request
+Returns a single role by ID.
+#### Request
 
 No request body required.
-##### Response
+#### Response
 
 ```json
 {
@@ -453,44 +535,71 @@ No request body required.
 ```
 
 
-### 4. Update Role
-#### 4.1 Endpoint 
-- **Endpoint:**  `/roles/{id}` 
-- **Method:**  `PUT` 
-- **Description:**  Update details of a specific role.
-##### Request
+### 3. POST /roles
+
+Creates a new role.
+#### Request
 
 ```json
 {
-  "role_title": "Senior Developer",
+  "role_title": "Senior",
   ...
 }
 ```
 
 
-##### Response
+#### Response
 
 ```json
 {
-  "id": 1,
-  "role_title": "Senior Developer",
+  "id": 2,
+  "role_title": "Senior",
   ...
 }
 ```
 
 
-### 5. Delete Role
-#### 5.1 Endpoint 
-- **Endpoint:**  `/roles/{id}` 
-- **Method:**  `DELETE` 
-- **Description:**  Delete a specific role.
-##### Request
+### 4. PUT /roles/{id}
+
+Updates a role by ID.
+#### Request
+
+```json
+{
+  "role_title": "Updated Senior",
+  ...
+}
+```
+
+
+#### Response
+
+```json
+{
+  "id": 2,
+  "role_title": "Updated Senior",
+  ...
+}
+```
+
+
+### 5. DELETE /roles/{id}
+
+Deletes a role by ID.
+#### Request
 
 No request body required.
-##### Response
+#### Response
 
 ```json
 {
   "message": "Role deleted successfully."
 }
 ```
+
+## Role Object
+
+- `id`: The role's unique identifier.
+- `role_title`: The title of the role.
+- `created_at`: The timestamp when the role was created.
+- `updated_at`: The timestamp when the role was last updated.
