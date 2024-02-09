@@ -26,10 +26,10 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::resource('employees', \App\Http\Controllers\EmployeeController::class);
+    Route::resource('employees', App\Livewire\EmployeeList::class);
     Route::resource('sections', \App\Http\Controllers\SectionController::class);
-    Route::resource('departments', \App\Http\Controllers\DepartmentController::class);
-    Route::resource('roles', \App\Http\Controllers\RoleController::class);
+    Route::resource('departments',App\Livewire\DepartmentsList::class);
+    Route::resource('roles', App\Livewire\RoleList::class);
 
     //livewire routes
 });

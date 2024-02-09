@@ -14,6 +14,11 @@ class RoleList extends Component
     public $role_title = '';
     public $role_id = '';
 
+    public function index()
+    {
+        return view('roles.index');
+    }
+
 
     public function mount()
     {
