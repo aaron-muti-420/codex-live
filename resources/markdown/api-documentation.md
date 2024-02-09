@@ -10,7 +10,7 @@ API authentication is required for certain endpoints. Include the `Authorization
 
 ## Endpoints
 
-- # User API
+# User API
 ## Endpoints
 ### 1. GET /users
 
@@ -162,7 +162,7 @@ The User object has the following properties:
 - updated_at: The timestamp when the user was last updated.
 - date_of_employment: The user's date of employment.
 
-- # Organisation API
+# Organisation API
 ## Endpoints
 ### 1. GET /organisations
 
@@ -278,7 +278,7 @@ No request body required.
 - created_at: The timestamp when the organisation was created.
 - updated_at: The timestamp when the organisation was last updated.
 
-- # Department API
+# Department API
 ## Endpoints
 ### 1. GET /departments
 
@@ -496,7 +496,7 @@ No request body required.
 - created_at: The timestamp when the section was created.
 - updated_at: The timestamp when the section was last updated.
 
-- # Role API
+# Role API
 ## Endpoints
 ### 1. GET /roles
 
