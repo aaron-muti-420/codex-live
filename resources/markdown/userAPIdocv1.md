@@ -1,34 +1,113 @@
-# User API
-
+- # User API
 ## Endpoints
+### 1. GET /users
 
-- GET /users: Returns a list of all users.
-- request
-```json
-GET /users HTTP/1.1
-Host: example.com
-```
-- response
-```json
-HTTP/1.1 200 OK
-Content-Type: application/json
+Returns a list of all users.
+#### Request
 
+No request body required.
+#### Response
+
+```json
 [
-    {
-        "id": 1,
-        "first_name": "John",
-        "last_name": "Doe",
-        "email": "john@example.com",
-        // other user fields...
-    },
-    // more users...
+  {
+    "id": 1,
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@example.com",
+    ...
+  },
+  ...
 ]
 ```
-- GET /users/{id}: Returns a single user by ID.
-- POST /users: Creates a new user.
-- PUT /users/{id}: Updates a user by ID.
-- DELETE /users/{id}: Deletes a user by ID.
 
+
+### 2. GET /users/{id}
+
+Returns a single user by ID.
+#### Request
+
+No request body required.
+#### Response
+
+```json
+{
+  "id": 1,
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "john.doe@example.com",
+  ...
+}
+```
+
+
+### 3. POST /users
+
+Creates a new user.
+#### Request
+
+```json
+{
+  "first_name": "Jane",
+  "last_name": "Doe",
+  "email": "jane.doe@example.com",
+  ...
+}
+```
+
+
+#### Response
+
+```json
+{
+  "id": 2,
+  "first_name": "Jane",
+  "last_name": "Doe",
+  "email": "jane.doe@example.com",
+  ...
+}
+```
+
+
+### 4. PUT /users/{id}
+
+Updates a user by ID.
+#### Request
+
+```json
+{
+  "first_name": "Updated John",
+  "last_name": "Updated Doe",
+  ...
+}
+```
+
+
+#### Response
+
+```json
+{
+  "id": 1,
+  "first_name": "Updated John",
+  "last_name": "Updated Doe",
+  ...
+}
+```
+
+
+### 5. DELETE /users/{id}
+
+Deletes a user by ID.
+#### Request
+
+No request body required.
+#### Response
+
+```json
+{
+  "message": "User deleted successfully."
+}
+```
 
 ## User Object
 
