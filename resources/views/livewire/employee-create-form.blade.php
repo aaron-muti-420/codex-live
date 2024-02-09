@@ -6,7 +6,8 @@
 
 <div>
     <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-@livewire('onboard.employee-details')
+@livewire('onboard.personal-details')
 <x-section-border></x-section-border>
+@livewire('onboard.employee-details')
     </div>
 </div>
