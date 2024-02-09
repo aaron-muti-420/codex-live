@@ -18,7 +18,7 @@
             </div>
             <div class="">
                 <h3 class="text-xl text-slate-900 dark:text-white relative font-bold leading-6">{{ $user->first_name}} {{$user->last_name}}</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400">{{$user->role->role_title}}: {{$user->position}}</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">{{$user->role->role_title ?? 'No Role'}}: {{$user->position ?? 'No Position'}}</p>
             </div>
             <div class="flex gap-3 flex-wrap"><span class="rounded-sm bg-yellow-100 px-3 py-1 text-xs font-medium text-yellow-800">{{$user->email}}</span></div>
             <h4 class="text-md font-medium leading-3">About</h4>

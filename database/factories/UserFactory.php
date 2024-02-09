@@ -44,6 +44,24 @@ class UserFactory extends Factory
             'years_of_service' => $this->faker->numberBetween(1, 20),
             'education' => $this->faker->sentence(2),
             'role_id' => $role->id, // You can modify this to generate valid role IDs
+            'date_of_employment' => $this->faker->date(),
+            'national_id' => $this->faker->unique()->numberBetween(100000, 999999),
+            'phone_number' => $this->faker->unique()->phoneNumber(),
+            'address' => $this->faker->address(),
+            'city' => $this->faker->city(),
+            'marital_status' => $this->faker->randomElement(['single','married','divorced','widowed']),
+            'tax_identification_number' => $this->faker->unique()->numberBetween(100000, 999999),
+            'social_security_number' => $this->faker->unique()->numberBetween(100000, 999999),
+            'bank_account_number' => $this->faker->unique()->numberBetween(100000, 999999),
+            'bank_name' => $this->faker->company(),
+            'bank_branch' => $this->faker->company(),
+            'salary_scale' => $this->faker->randomElement(['A','B','C','D']),
+            'basic_salary' => $this->faker->numberBetween(10000, 99999),
+            'housing_allowance' => $this->faker->numberBetween(10000, 99999),
+            'transport_allowance' => $this->faker->numberBetween(10000, 99999),
+            'other_allowance' => $this->faker->numberBetween(10000, 99999),
+            'total_salary' => $this->faker->numberBetween(10000, 99999),
+
         ];
     }
 
