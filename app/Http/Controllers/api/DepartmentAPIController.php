@@ -8,6 +8,7 @@ use App\Models\Organisation\Department; // Add this line
 class DepartmentAPIController extends Controller
 {
     /**
+     *
      * Display a listing of the resource.
      */
     public function index()

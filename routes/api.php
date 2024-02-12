@@ -1,8 +1,14 @@
 <?php
 
+use App\Http\Controllers\api\DepartmentAPIController;
 use Illuminate\Http\Request;
 use Illuminate\Routing\RouteGroup;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\api\UserAPIController;
+use App\Http\Controllers\api\OrganisationAPIController;
+use App\Http\Controllers\api\RoleAPIController;
+use App\Http\Controllers\api\SectionAPIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +21,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-Route::resource('organisation', App\Http\Controllers\api\OrganisationAPIController::class);
-Route::resource('employees', App\Http\Controllers\api\UserAPIController::class);
+
+Route::resource('organisation', OrganisationAPIController::class);
+Route::resource('employees', UserAPIController::class);
+Route::resource('departments', DepartmentAPIController::class);
+Route::resource('sections',SectionAPIController::class);
+Route::resource('roles', RoleAPIController::class);

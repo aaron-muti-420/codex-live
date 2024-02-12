@@ -2,8 +2,8 @@
      <div class="pt-3 px-4">
          <div class="mt-4 w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           <a href="{{route('employees.index')}}" class="">
-             <div class="bg-white hover:bg-gray-200 shadow rounded-lg p-4 sm:p-6 xl:p-8 dark:bg-gray-800 dark:hover:bg-gray-700">
-                 <div class="flex items-center">
+             <div class="bg-white hover:shadow-lg hover:shadow-red-500/50 shadow rounded-lg p-4 sm:p-6 xl:p-8 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 <div class="flex items-center transition duration-300 ease-in-out hover:scale-105 ">
                      <div class="flex-shrink-0">
                          <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900 dark:text-white">{{$employees}}</span>
                          <h3 class="text-base font-normal text-gray-500 dark:text-gray-400">Employees</h3>
@@ -18,8 +18,8 @@
              </div>
           </a>
           <a href="{{route('departments.index')}}" class="">
-             <div class="bg-white hover:bg-gray-200 shadow rounded-lg p-4 sm:p-6 xl:p-8 dark:bg-gray-800 dark:hover:bg-gray-700">
-                 <div class="flex items-center">
+             <div class="bg-white hover:shadow-lg hover:shadow-red-500/50 shadow rounded-lg p-4 sm:p-6 xl:p-8 dark:bg-gray-800 dark:hover:bg-gray-700">
+                 <div class="flex items-center transition duration-300 ease-in-out hover:scale-105">
                      <div class="flex-shrink-0">
                          <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900 dark:text-white">{{$departments}}</span>
                          <h3 class="text-base font-normal text-gray-500 dark:text-gray-400">Departments</h3>
@@ -35,9 +35,9 @@
           </a>
              <a href="{{route('sections.index')}}" class="">
 
-             <div class="bg-white hover:bg-gray-200 shadow rounded-lg p-4 sm:p-6 xl:p-8 dark:bg-gray-800 dark:hover:bg-gray-700">
+             <div class="bg-white hover:shadow-lg hover:shadow-red-500/50 shadow rounded-lg p-4 sm:p-6 xl:p-8 dark:bg-gray-800 dark:hover:bg-gray-700">
 
-                 <div class="flex items-center">
+                 <div class="flex items-center transition duration-300 ease-in-out hover:scale-105">
                      <div class="flex-shrink-0">
                          <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900 dark:text-white">{{$sections}}</span>
                          <h3 class="text-base font-normal text-gray-500 dark:text-gray-400">Sections</h3>
@@ -118,13 +118,13 @@
                           @foreach ($roles as $role)
                           <tr class="dark:bg-gray-800 dark:text-white">
                                 <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">{{$role->role_title}}</th>
-                                <td class="border-t-0 px-4 align-middle text-xs font-medium  whitespace-nowrap p-4">{{$role->users->count()}}</td>
+                                <td class="border-t-0 px-4 align-middle text-xs font-medium  whitespace-nowrap p-4">{{$role->users_count}}</td>
                                 <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
                                     <div class="flex items-center">
-                                        <span class="mr-2 text-xs font-medium">{{ round($role->users->count()/$employees * 100) }}%</span>
+                                        <span class="mr-2 text-xs font-medium">{{ round($role->users_count/$employees * 100) }}%</span>
                                         <div class="relative w-full">
                                             <div class="w-full bg-gray-200 rounded-sm h-2 dark:bg-gray-700">
-                                                <div class="bg-red-600 h-2 rounded-sm" style="width: {{ round($role->users->count()/$employees * 100) }}%"></div>
+                                                <div class="bg-red-600 h-2 rounded-sm" style="width: {{ round($role->users_count/$employees * 100) }}%"></div>
                                             </div>
                                         </div>
                                     </div>

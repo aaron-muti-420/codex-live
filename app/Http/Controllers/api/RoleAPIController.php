@@ -22,6 +22,7 @@ class RoleAPIController extends Controller
     /**
  * Store a newly created resource in storage.
  */
+
 public function store(Request $request)
 {
     $role = Role::create($request->all()); // Create a new role with the request data

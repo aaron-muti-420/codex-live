@@ -25,7 +25,7 @@
                     <tr class="">
                         <td class="px-6 py-4 whitespace-nowrap">{{$role->id}}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $role->role_title }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ $role->users->count() }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $role->users_count }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             <x-danger-button wire:click="confirmRoleRemoval({{ $role->id }})" wire:loading.attr="disabled">
                                 {{ __('X') }}

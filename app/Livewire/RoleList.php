@@ -68,7 +68,7 @@ class RoleList extends Component
     public function render()
     {
         return view('livewire.role-list', [
-            'roles' => Role::search($this->search)->paginate(10),
+            'roles' => Role::withCount('users')->search($this->search)->get(),
         ]);
     }
 

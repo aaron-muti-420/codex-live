@@ -14,7 +14,8 @@ class OrganisationAPIController extends Controller
     public function index()
     {
         $organisations = Organisation::all(); // Retrieve all organisations
-        return response()->json($organisations, 200); // Return JSON response with status code 200
+        return response()->json($organisations, 200); // Return JSON response with status code
+
     }
 
     /**

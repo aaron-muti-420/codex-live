@@ -8,6 +8,7 @@ use App\Models\Organisation\Section;
 
 class SectionAPIController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */
