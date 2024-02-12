@@ -61,13 +61,13 @@
 
                         <div class="col-span-6 sm:col-span-4">
                             <x-label for="marital_status" :value="__('Marital Status')">Marital Status</x-label>
-                            <x-select id="marital_status" class="block w-full mt-1 text-black" name="marital_status" :value="old('marital_status')" wire:model.lazy="marital_status">
+                            <select id="marital_status" class="block w-full mt-1 text-black block w-full mt-1 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-red-500 dark:focus:border-red-600 focus:ring-red-500 dark:focus:ring-red-600 rounded-md shadow-sm" name="marital_status" :value="old('marital_status')" wire:model.lazy="marital_status">
                                 <option value="">Select Marital Status</option>
                                 <option value="single">Single</option>
                                 <option value="married">Married</option>
                                 <option value="divorced">Divorced</option>
                                 <option value="widowed">Widowed</option>
-                            </x-select>
+                            </select>
                         </div>
 
                         <div class="col-span-6 sm:col-span-4">
@@ -76,21 +76,42 @@
                         </div>
                         @elseif ($currentPage === 2 )
                         <div class="col-span-6 sm:col-span-4">
-                            <x-label for="supervisor_id" :value="__('Supervisor ID')">Supervisor ID</x-label>
-                            <x-input id="supervisor_id" type="text" class="mt-1 block w-full"  wire:model.lazy="supervisor_id" />
+
+
+                            <div class="col-span-6 sm:col-span-4">
+                                <x-label for="supervisor_id" :value="__('Supervisor ID')">Supervisor</x-label>
+
+                                <select id="supervisor_id" class="block w-full mt-1 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-red-500 dark:focus:border-red-600 focus:ring-red-500 dark:focus:ring-red-600 rounded-md shadow-sm" name="supervisor_id" :value="old('supervisor_id')" wire:model.lazy="supervisor_id">
+                                    <option value="">Select Supervisor</option>
+                                    @foreach ($supervisors as $supervisor)
+                                        <option value="{{ $supervisor['id'] }}">{{ $supervisor['first_name']. ' ' . $supervisor['last_name'] }}</option>
+                                    @endforeach
+                                </select>
+                                <x-input-error for="supervisor_id" class="mt-2" />
+                            </div>
                             <x-input-error for="supervisor_id" class="mt-2" />
                         </div>
 
 
                         <div class="col-span-6 sm:col-span-4">
                             <x-label for="section_id" :value="__('Section ID')">Section ID</x-label>
-                            <x-input id="section_id" type="text" class="mt-1 block w-full"  wire:model.lazy="section_id" />
+                            <select id="section_id" class="block w-full mt-1 block w-full mt-1 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-red-500 dark:focus:border-red-600 focus:ring-red-500 dark:focus:ring-red-600 rounded-md shadow-sm" name="section_id" :value="old('section_id')" wire:model.lazy="section_id">
+                                <option value="">Select Section</option>
+                                @foreach ($sections as $section)
+                                    <option value="{{ $section['id'] }}">{{ $section['section_name'] }}</option>
+                                @endforeach
+                            </select>
                             <x-input-error for="section_id" class="mt-2" />
                         </div>
 
                         <div class="col-span-6 sm:col-span-4">
-                            <x-label for="role_id" :value="__('Role ID')">Role</x-label>
-                            <x-input id="role_id" type="text" class="mt-1 block w-full"   wire:model.lazy="role_id" />
+                            <x-label for="role_id" :value="__('Role')">Role</x-label>
+                            <select id="role_id" class="block w-full mt-1 block w-full mt-1 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-red-500 dark:focus:border-red-600 focus:ring-red-500 dark:focus:ring-red-600 rounded-md shadow-sm" name="role_id" :value="old('role_id')" wire:model.lazy="role_id">
+                                <option value="">Select Role</option>
+                                @foreach ($roles as $role)
+                                    <option value="{{ $role['id'] }}">{{ $role['role_title'] }}</option>
+                                @endforeach
+                            </select>
                             <x-input-error for="role_id" class="mt-2" />
                         </div>
 

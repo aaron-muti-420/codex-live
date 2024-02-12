@@ -2,6 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Models\Organisation\Role;
+use App\Models\Organisation\Section;
 use App\Models\User;
 use Livewire\Component;
 
@@ -53,6 +55,10 @@ class EmployeeCreateForm extends Component
     public $updated_at;
     public $date_of_employment;
 
+    public $roles = [];
+    public $sections = [];
+    public $supervisors = [];
+
 
     // Page information
     public $pages = [
@@ -66,6 +72,13 @@ class EmployeeCreateForm extends Component
         ],
 
     ];
+
+    public function mount()
+    {
+        $this->roles = Role::all();
+        $this->sections = Section::all();
+        $this->supervisors = User::where('role_id', 2)->get();
+    }
 
 
 
