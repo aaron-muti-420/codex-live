@@ -23,6 +23,6 @@ class DepartmentsList extends Component
     public function render()
     {
 
-        return view('livewire.departments-list', ['departments' => Department::search($this->search)->paginate(10)]);
+        return view('livewire.departments-list', ['departments' => Department::withCount('sections')->search($this->search)->paginate(10)]);
     }
 }

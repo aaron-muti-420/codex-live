@@ -1,5 +1,5 @@
-<div>
-    <div class="mt-4 w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 ">
+<div class="">
+    <div class="mt-4 w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           <div class="bg-white dark:text-white dark:bg-gray-800  shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
              <div class="flex items-center">
                 <div class="flex-shrink-0">
@@ -33,6 +33,7 @@
              </div>
 
           </div>
+
 
        </div>
 </div>

@@ -12,7 +12,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.4",
-        "spatie/laravel-livewire-wizard": "^2.0",
+        "vildanbina/livewire-wizard": "^2.0",
         "wire-elements/modal": "^2.0"
     },
     "require-dev": {

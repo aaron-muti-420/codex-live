@@ -4,11 +4,9 @@
 
     <x-form-section submit="updatePersonalDetails">
         <x-slot name="title">
-            Personal Details
         </x-slot>
 
         <x-slot name="description">
-            Please provide the future employees' personal details below.
         </x-slot>
 
         <x-slot name="form">

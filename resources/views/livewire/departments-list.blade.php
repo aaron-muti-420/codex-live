@@ -21,7 +21,7 @@
                         <td class="px-6 py-4 whitespace-nowrap">{{$department->id}}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $department->department_name }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $department->department_location }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ $department->sections->count() }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $department->sections_count }}</td>
                         <!-- Add more table cells as needed -->
                     </tr>
                 @endforeach

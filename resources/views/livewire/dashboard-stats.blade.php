@@ -66,9 +66,9 @@
                      <ul role="list" class="divide-y divide-gray-200">
                           @foreach ($latestUsers as $luser)
                           <a href="{{route('employees.show', $luser->id)}}">
-                          <li class="p-3 rounded-lg sm:py-4 hover:bg-gray-200 dark:hover:bg-gray-700">
+                          <li class="p-3 rounded-lg sm:py-4  hover:bg-gray-100 dark:hover:bg-gray-700">
                                 <div class="flex items-center space-x-4">
-                                    <div class="flex-shrink-0">
+                                    <div class="flex-shrink-0 ">
                                      @if ($luser->profile_photo_path)
                                           <img class="h-8 w-8 rounded-full" src="profile-photos/{{asset($luser->profile_photo_path)}}" alt="User Avatar">
                                      @else
