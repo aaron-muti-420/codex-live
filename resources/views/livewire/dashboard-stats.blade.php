@@ -97,7 +97,7 @@
                      </ul>
                  </div>
              </div>
-             <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 dark:bg-gray-800">
+             <div class="bg-white shadow rounded-lg p-4 sm:p-6 md:mt-4 xl:p-8 dark:bg-gray-800">
 
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Operational Overview</h3>
@@ -114,7 +114,7 @@
                                  <th class="min-w-140-px"></th>
                              </tr>
                          </thead>
-                         <tbody class="divide-y divide-gray-100">
+                         <tbody class="divide-y divide-gray-100 ">
                           @foreach ($roles as $role)
                           <tr class="dark:bg-gray-800 dark:text-white">
                                 <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">{{$role->role_title}}</th>

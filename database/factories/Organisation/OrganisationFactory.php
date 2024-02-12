@@ -18,10 +18,10 @@ class OrganisationFactory extends Factory
     {
         return [
             //
-            'organisation_name' => $this->faker->name(),
+            'organisation_name' => "CodeCraft Innovations Ltd",
             'organisation_logo' => $this->faker->imageUrl(),
-            'organisation_mission' => $this->faker->sentence(5),
-            'organisation_vision' => $this->faker->sentence(5),
+            'organisation_mission' => "To provide innovative software solutions that empower progress.",
+            'organisation_vision' => "Empowering progress through innovative software solutions.",
 
         ];
     }
