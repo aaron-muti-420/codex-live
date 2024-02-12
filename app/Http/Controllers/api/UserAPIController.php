@@ -24,8 +24,27 @@ class UserAPIController extends Controller
         $validatedData = $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
+            'date_of_birth' => 'required',
+            'gender' => 'required',
+            'national_id' => 'required',
+            'phone_number' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'marital_status' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|string|min:8',
+            'supervisor_id' => 'required',
+            'salary_reference_number' => 'required',
+            'section_id' => 'required',
+            'role_id' => 'required',
+            'position' => 'required',
+            'tax_identification_number' => 'required',
+            'social_security_number' => 'required',
+            'bank_account_number' => 'required',
+            'bank_name' => 'required',
+            'bank_branch' => 'required',
+            'salary_scale' => 'required',
+            'date_of_employment' => 'required',
         ]);
 
         $user = User::create($validatedData); // Create a new user with the validated data
